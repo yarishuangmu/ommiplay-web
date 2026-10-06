@@ -1,0 +1,49 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  # 手动触发:OmniPlay 发了新版本但站点还没跟着更新时用
+  workflow_dispatch:
+  # ommiplay 仓库发版时用 repository_dispatch 唤起(release 事件 → 见 README)
+  repository_dispatch:
+    types: [new-release]
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: 构建并部署
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 准备 Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 零依赖项目,这里不需要 npm install
+      - name: 跑单元测试
+        run: node scripts/test-fetch-releases.mjs
+
+      - name: 构建
+        env:
+          # 用仓库自带的 GITHUB_TOKEN 拉 Release,避开匿名调用的 60 次/小时限额
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/build.mjs
+
+      - name: 部署到 Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=omniplay-web --branch=main --commit-dirty=true

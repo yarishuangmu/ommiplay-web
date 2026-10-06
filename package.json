@@ -1,0 +1,15 @@
+{
+  "name": "ommiplay-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OmniPlay 官网 —— 产品介绍与 GitHub Releases 下载入口",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "node scripts/serve.mjs",
+    "test": "node scripts/test-fetch-releases.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

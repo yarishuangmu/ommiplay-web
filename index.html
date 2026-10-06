@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OmniPlay — 家庭多端媒体中枢</title>
+<meta name="description" content="OmniPlay 让家里装了应用的每一台设备都成为节点:既是控制器,也是播放器,还能把本机媒体分享为内容源。设备自动发现、PIN 配对互信、双向投播,没有强制常驻的中枢。">
+<meta name="theme-color" content="#0b0d14">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236366f1'/><path d='M11 10l12 6-12 6z' fill='white'/></svg>">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">OmniPlay</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#features">特性</a>
+      <a href="#how">工作方式</a>
+      <a href="#download">下载</a>
+      <a href="https://github.com/yarishuangmu/ommiplay" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">M0-α · 两端最小闭环已实现</p>
+      <h1>装了应用的设备<br><span class="grad">都是家里的节点</span></h1>
+      <p class="lede">
+        在家庭局域网内,任意一台装了 OmniPlay 的设备既是控制器,也是播放器,
+        还能把本机媒体分享为内容源。节点自动互相发现,一次配对全家互信。
+      </p>
+      <p class="hero-note">没有强制常驻的中枢 —— 拔掉任何一台,剩下的照常工作。</p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#download" data-cta-download>下载</a>
+        <a class="btn btn-ghost" href="https://github.com/yarishuangmu/ommiplay" target="_blank" rel="noopener">查看源码</a>
+      </div>
+    </div>
+    <div class="hero-glow" aria-hidden="true"></div>
+  </section>
+
+  <!-- ── 下载 ─────────────────────────────────────────── -->
+  <section class="section" id="download">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>下载</h2>
+        <p class="section-sub">安装包托管在 GitHub Releases,版本随发布自动更新。</p>
+      </div>
+
+      <div class="download-card" id="download-card">
+        <div class="dl-meta" id="dl-meta"><span class="skeleton-line"></span></div>
+        <div class="dl-buttons" id="dl-buttons"></div>
+        <p class="dl-foot" id="dl-foot"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 特性 ─────────────────────────────────────────── -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>已实现的能力</h2>
+        <p class="section-sub">以下均已在 macOS 与 Android 双端打通。</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><path d="M12 4.5a7.5 7.5 0 0 1 7.5 7.5"/><path d="M12 8.5a3.5 3.5 0 0 1 3.5 3.5"/><path d="M5.2 18.8a9.6 9.6 0 0 1 0-13.6"/></svg>
+          <h3>三层发现兜底</h3>
+          <p>mDNS 与 UDP 信标自动发现节点,同时保留手动 IP 直连。路由器不支持组播也能连上。</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="3.5"/><path d="M10 13l8-8"/><path d="M15.5 7.5l2.5 2.5"/><path d="M18 5l2 2"/></svg>
+          <h3>PIN 配对互信</h3>
+          <p>设备侧使用 Ed25519 身份,Web 控制侧使用令牌。一次配对,全家的设备互信。</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h11a3 3 0 0 1 3 3"/><path d="M3 12.5h8a1.5 1.5 0 0 1 1.5 1.5"/><path d="M3 17h3"/><path d="M20 4.5l-4.5 4.5"/><path d="M20 4.5h-3.2"/><path d="M20 4.5v3.2"/></svg>
+          <h3>双向投播</h3>
+          <p>手机投电脑、电脑投手机,方向对等。任意节点既是播放端也是控制端。</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><circle cx="12" cy="7" r="1.3"/><path d="M10.5 12h3"/><path d="M10.5 15.5h3"/></svg>
+          <h3>完整遥控</h3>
+          <p>进度、音量、倍速、音轨与字幕轨切换,支持显式接管正在播放的会话。</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3 4v4.5h4.5"/><path d="M12 7.8V12l3 1.8"/></svg>
+          <h3>断电续播</h3>
+          <p>播放进度本地持久化,重新打开自动跳回上次位置。</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12.5l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>
+          <h3>多内容源</h3>
+          <p>内置 WebDAV 网络源,内容源可远程增删。本机目录直接作为内容源分享。</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 20.5h8"/><path d="M12 17v3.5"/><path d="M6.5 11.5l4-2.5v5z" fill="currentColor" stroke="none"/></svg>
+          <h3>电脑控制</h3>
+          <p>仿真触控板加键鼠控制,把手机变成触控板来操作电脑(macOS,需辅助功能授权)。</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor" stroke="none"/></svg>
+          <h3>在线影院</h3>
+          <p>桌面 WebView 承载优酷、爱奇艺、腾讯视频、B站,投到家里的屏幕上一起看。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 工作方式 ─────────────────────────────────────── -->
+  <section class="section section-alt" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>四步跑通闭环</h2>
+        <p class="section-sub">这是 M0 的验收路径,也是最典型的使用方式。</p>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <span class="step-n">1</span>
+          <h3>电脑上跑起来</h3>
+          <p>在 Mac 上启动应用,侧栏点 <strong>+</strong> 选择媒体目录 —— NAS 的 SMB 挂载点或本地文件夹都行。</p>
+        </li>
+        <li>
+          <span class="step-n">2</span>
+          <h3>手机装好后配对</h3>
+          <p>手机装上 APK,打开「遥控」页,Mac 节点会出现。点开它,输入 Mac 屏幕上的 PIN。</p>
+        </li>
+        <li>
+          <span class="step-n">3</span>
+          <h3>选片投出去</h3>
+          <p>在「浏览并投片」里选一部片子投到 Mac,遥控盘可以拖进度、调音量、切音轨字幕。</p>
+        </li>
+        <li>
+          <span class="step-n">4</span>
+          <h3>反向也一样</h3>
+          <p>手机上的「本机播放」页同样能被投出去。浏览器打开 <code>http://&lt;Mac IP&gt;:47771</code> 也是一台控制器。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── 路线图 ───────────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>开发进度</h2>
+        <p class="section-sub">透明地把做到哪一步写出来。</p>
+      </div>
+
+      <div class="roadmap">
+        <div class="rm-item rm-done">
+          <span class="rm-tag">已完成</span>
+          <p>双端节点(控制器 / 播放器 / 内容源)、发现与配对、双向投播与遥控、断电续播、签名流地址与 HTTP Range 拉流、WebDAV 网络源、仿真触控板与键鼠控制、在线影院</p>
+        </div>
+        <div class="rm-item rm-wip">
+          <span class="rm-tag">进行中</span>
+          <p>M1-α 插件化骨架:PluginManager、CapabilityRegistry 卸载路径、用户脚本引擎与 iQiyi 示例插件</p>
+        </div>
+        <div class="rm-item rm-next">
+          <span class="rm-tag">待开始</span>
+          <p>Mac WebView 注入通道与插件商店界面;对等归集同步、转码、Emby / IPTV 接入、刮削</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ─────────────────────────────────────────── -->
+  <section class="section cta-band">
+    <div class="wrap cta-band-inner">
+      <h2>在你自己家的设备之间试试</h2>
+      <p>局域网内跑通,不需要任何云端账号。</p>
+      <div class="cta-row center">
+        <a class="btn btn-primary" href="#download" data-cta-download>前往下载</a>
+        <a class="btn btn-ghost" href="https://github.com/yarishuangmu/ommiplay" target="_blank" rel="noopener">Star 一下</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>OmniPlay · 家庭多端媒体中枢</p>
+    <p class="footer-links">
+      <a href="https://github.com/yarishuangmu/ommiplay" target="_blank" rel="noopener">源码仓库</a>
+      <a href="https://github.com/yarishuangmu/ommiplay/releases" target="_blank" rel="noopener">发布页</a>
+      <a href="https://github.com/yarishuangmu/ommiplay/issues" target="_blank" rel="noopener">反馈问题</a>
+    </p>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
