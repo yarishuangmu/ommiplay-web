@@ -63,8 +63,10 @@ GITHUB_TOKEN="$(gh auth token)" npm run build
 1. **手动**(最省事):进本仓库 Actions,点 *Run workflow*。
 2. **自动**:在 `omniplay` 仓库加一个 workflow,发版时调本仓库的
    `repository_dispatch`(需给本仓库的 `GITHUB_TOKEN` 加 `contents: write`)。
-3. **Cloudflare Deploy Hook**:在 Pages 项目里建 deploy hook,
-   配合上面第 2 种方式或任何外部系统直接 curl。
+3. **Cloudflare Deploy Hook**:Pages 项目下已建好名为 `ommiplay-release-sync`
+   的 hook(分支 `main`)。**它的 URL 只能在 Cloudflare 控制台查看**
+   (Workers & Pages → omniplay-web → Settings → Deploy hooks),API 取不到。
+   拿到后直接 `curl -X POST "<hook-url>"` 即可触发重建。
 
 `dist/releases.json` 的缓存策略是 `max-age=300`,所以即使不重建,
 5 分钟内也会拿到新版本号。
